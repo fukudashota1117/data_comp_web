@@ -19,6 +19,7 @@ def sample_form():
     if request.method == 'POST':
         print('POSTデータ受け取ったので処理します。')
         #req1 = request.form['data1']
+        #second commit!
         q1=request.form["q1"]
         q2=request.form["q2"]
         q3=request.form["q3"]
