@@ -1,5 +1,6 @@
 from testapp import app
 from flask import render_template,request
+from testapp import score_23k
 
 @app.route('/')
 def index():
@@ -20,6 +21,7 @@ def sample_form():
         print('POSTデータ受け取ったので処理します。')
         #req1 = request.form['data1']
         #third commit!
+        towntype=request.form["towntype"]
         q1=request.form["q1"]
         q2=request.form["q2"]
         q3=request.form["q3"]
@@ -27,6 +29,15 @@ def sample_form():
         q5=request.form["q5"]
         q6=request.form["q6"]
         q7=request.form["q7"]
+        priority=[7,6,5]
+        income=request.form["income"]
         question=[q1,q2,q3,q4,q5,q6,q7]
+        question=[int(s) for s in question]
         #return f'POST受け取ったよ: {question}'
-        return render_template("testapp/index2.html",question=question)
+        rank_23k=score_23k.score(towntype,question,priority,income)
+        rank_23k=rank_23k[:3]
+        rank_23k=[rank_23k[0][0],rank_23k[1][0],rank_23k[2][0]]
+        first_k=rank_23k[0]
+        second_k=rank_23k[1]
+        third_k=rank_23k[2]
+        return render_template("testapp/index2.html",first_k=first_k,second_k=second_k,third_k=third_k)

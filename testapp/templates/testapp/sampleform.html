@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dstyle.css') }}"/>
     <title>テストフォーム</title>
 </head>
 <body>
@@ -15,65 +17,294 @@
     </form>
 -->
 <form action="/sampleform" method="POST">
+<div class="ctnr_1000 ctnr_pad_2">
 <ul>
     <li>
-        <p>子育てのしやすさや教育の充実度についてどう思うか</p>
-        <label><input name="q1" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q1" type="radio" value=2 />2.</label><br />
-        <label><input name="q1" type="radio" value=3 />3.</label><br />
-        <label><input name="q1" type="radio" value=4 />4.</label><br />
-        <label><input name="q1" type="radio" value=5 />5. 満足</label>
+        <div class="box_gray_1">
+            <div class="question">
+                <div class="evaluation_txt">
+                    <p>現在住んでいる街にあてはまるものを以下の3つのうちから1つ選んでください</p>
+                    </div>
+           
+        <div class="example2">
+            <input name="towntype" id="11" type="radio" value=1 /><label for="11">都会</label>
+            <input name="towntype" id="12" type="radio" value=2 /><label for="12">住宅街</label>
+            <input name="towntype" id="13" type="radio" value=3 /><label for="13">田舎</label>
+
+        </div>
+            </div>
+        </div>
     </li>
     <li>
-        <p>病気になったときに安心できるか</p>
-        <label><input name="q2" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q2" type="radio" value=2 />2.</label><br />
-        <label><input name="q2" type="radio" value=3 />3.</label><br />
-        <label><input name="q2" type="radio" value=4 />4.</label><br />
-        <label><input name="q2" type="radio" value=5 />5. 満足</label>
+        <div class="evaluation">
+            
+        <div class="evaluation_txt">
+            <p>子育てのしやすさや教育の充実度についてどう思うか</p>
+        </div>
+        
+
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q1" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q1" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q1" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q1" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q1" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
     </li>
     <li>
-        <p>治安の良さについてどう思うか</p>
-        <label><input name="q3" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q3" type="radio" value=2 />2.</label><br />
-        <label><input name="q3" type="radio" value=3 />3.</label><br />
-        <label><input name="q3" type="radio" value=4 />4.</label><br />
-        <label><input name="q3" type="radio" value=5 />5. 満足</label>
+
+        <div class="evaluation">
+        <div class="evaluation_txt">
+            <p>病気になったときでも安心できるか</p>       
+        </div>
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q2" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q2" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q2" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q2" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q2" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
     </li>
     <li>
-        <p>自然や周囲の環境についてどう思うか</p>
-        <label><input name="q4" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q4" type="radio" value=2 />2.</label><br />
-        <label><input name="q4" type="radio" value=3 />3.</label><br />
-        <label><input name="q4" type="radio" value=4 />4.</label><br />
-        <label><input name="q4" type="radio" value=5 />5. 満足</label>
+        
+        <div class="evaluation">
+            <div class="evaluation_txt">
+                <p>周辺の治安の良さについてどう思うか</p>
+            </div>
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q3" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q3" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q3" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q3" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q3" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
     </li>
     <li>
-        <p>買い物に便利か</p>
-        <label><input name="q5" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q5" type="radio" value=2 />2.</label><br />
-        <label><input name="q5" type="radio" value=3 />3.</label><br />
-        <label><input name="q5" type="radio" value=4 />4.</label><br />
-        <label><input name="q5" type="radio" value=5 />5. 満足</label>
+        
+        <div class="evaluation">
+        <div class="evaluation_txt">
+            <p>周囲の自然や環境についてどう思うか</p>
+        </div>
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q4" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q4" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q4" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q4" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q4" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
     </li>
     <li>
-        <p>街の飲食店についてどう思うか</p>
-        <label><input name="q6" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q6" type="radio" value=2 />2.</label><br />
-        <label><input name="q6" type="radio" value=3 />3.</label><br />
-        <label><input name="q6" type="radio" value=4 />4.</label><br />
-        <label><input name="q6" type="radio" value=5 />5. 満足</label>
+        
+        <div class="evaluation">
+            <div class="evaluation_txt">
+                <p>買い物の利便性についてどう思うか</p>
+            </div>
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q5" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q5" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q5" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q5" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q5" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
     </li>
     <li>
-        <p>駅へのアクセスや交通機関の利用についてどう思うか</p>
-        <label><input name="q7" type="radio" value=1 required="" />1. 不満</label><br />
-        <label><input name="q7" type="radio" value=2 />2.</label><br />
-        <label><input name="q7" type="radio" value=3 />3.</label><br />
-        <label><input name="q7" type="radio" value=4 />4.</label><br />
-        <label><input name="q7" type="radio" value=5 />5. 満足</label>
+        
+        <div class="evaluation">
+
+            <div class="evaluation_txt">
+                <p>街の飲食店の多さやその満足度についてどう思うか</p>
+            </div>
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q6" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q6" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q6" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q6" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q6" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </li>
+    <li>
+        
+        <div class="evaluation">
+
+            <div class="evaluation_txt">
+                <p>駅へのアクセスや交通機関の利用についてどう思うか</p>
+            </div>
+        <div class="evaluation_input">
+        <div class="range">
+            <div class="range_slider">
+                <label><input name="q7" type="radio" value=1 />
+                <span></span>
+                </label>
+                <label><input name="q7" type="radio" value=2 />
+                <span></span>
+            </label>
+                <label><input name="q7" type="radio" value=3 />
+                <span></span>
+            </label>
+                <label><input name="q7" type="radio" value=4 />
+                <span></span>
+            </label>
+                <label><input name="q7" type="radio" value=5 />
+                <span></span>
+            </label>
+                </div>
+            <div class="range_label">
+                <p>不満</p>
+                <p>満足</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </li>
+    <li>
+        <div class="box_gray_1">
+            <div class="question">
+                 <div class="evaluation_ttl">
+                        
+                    </div>
+                   
+                    <div class="question_txt">
+                    <p>あなたのおおよその年収を教えてください</p>
+                    </div>
+        <div class="question_body">
+        <div class="question_select js_select_1">
+        <div class="example2">
+            <input name="income" id="111" type="radio" value=1 /><label for="111">400万円未満</label>
+            <input name="income" id="112" type="radio" value=1 /><label for="112">400万～600万円未満</label>
+            <input name="income" id="113" type="radio" value=2 /><label for="113">600万~800万円未満</label>
+            <input name="income" id="114" type="radio" value=3 /><label for="114">800万~1000万円未満</label>
+            <input name="income" id="115" type="radio" value=4 /><label for="115">1000万円以上</label>
+
+        </div>
+        </div>
+        </div>
+            </div>
+        </div>
     </li>
     </ul>
-        <input type="submit" value="判定！" />
+        <input class="decorated-btn click-down" type="submit" value="判定"style="font-size:40px" />
+</div>
     </form>
 </body>
 </html>
