@@ -2,6 +2,7 @@ from testapp import app
 from flask import render_template,request
 from testapp import score_23k
 
+#mac Test success!
 @app.route('/')
 def index():
     my_dict = {
