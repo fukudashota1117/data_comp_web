@@ -30,7 +30,13 @@ def sample_form():
         q5=request.form["q5"]
         q6=request.form["q6"]
         q7=request.form["q7"]
-        priority=[7,6,5]
+        prio_1=request.form["prio_1"]
+        prio_2=request.form["prio_2"]
+        prio_3=request.form["prio_3"]
+        prio_1=int(prio_1)
+        prio_2=int(prio_2)
+        prio_3=int(prio_3)
+        priority=[prio_1,prio_2,prio_3]
         income=request.form["income"]
         question=[q1,q2,q3,q4,q5,q6,q7]
         question=[int(s) for s in question]
@@ -41,4 +47,4 @@ def sample_form():
         first_k=rank_23k[0]
         second_k=rank_23k[1]
         third_k=rank_23k[2]
-        return render_template("testapp/index2.html",first_k=first_k,second_k=second_k,third_k=third_k)
+        return render_template("testapp/index2.html",first_k=first_k,second_k=second_k,third_k=third_k,priority=priority)

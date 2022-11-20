@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dstyle.css') }}" />
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/priority.css') }}" />-->
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <title>テストフォーム</title>
 </head>
 
@@ -39,6 +42,36 @@
                                 <input name="towntype" id="12" type="radio" value=2 /><label for="12">住宅街</label>
                                 <input name="towntype" id="13" type="radio" value=3 /><label for="13">田舎</label>
 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_gray_1">
+                        <div class="question">
+                            <div class="evaluation_ttl">
+
+                            </div>
+
+                            <div class="question_txt">
+                                <p>あなたのおおよその年収を教えてください</p>
+                            </div>
+                            <div class="question_body">
+                                <div class="question_select js_select_1">
+                                    <div class="example2">
+                                        <input name="income" id="111" type="radio" value=1 /><label
+                                            for="111">400万円未満</label>
+                                        <input name="income" id="112" type="radio" value=1 /><label
+                                            for="112">400万～600万円未満</label>
+                                        <input name="income" id="113" type="radio" value=2 /><label
+                                            for="113">600万~800万円未満</label>
+                                        <input name="income" id="114" type="radio" value=3 /><label
+                                            for="114">800万~1000万円未満</label>
+                                        <input name="income" id="115" type="radio" value=4 /><label
+                                            for="115">1000万円以上</label>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -285,39 +318,230 @@
                     </div>
 
                 </li>
+                <div class="box_gray_1">
+
+                    <div class="evaluation_txt">
+                        <p>街に住む上で<span class="chara3">優先度が高い項目</span>を順に<span class="chara3">3つ</span>選択してください。</p>
+                    </div>
+                </div>
                 <li>
-                    <div class="box_gray_1">
-                        <div class="question">
-                            <div class="evaluation_ttl">
+                    <div class="select_3 js_select_3" id="step2-2_q1">
 
+                        <div class="select_3_body">
+
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_1" onclick="clickBtn1()">
+                                <div class="select_3_priority" id="pushSample1"></div>
+                                <p class="select_3_btn_txt"><span id="span1">教育・子育て</span>
+                                    <input type="hidden" value="red" id="hidden1" />
+
+                                    <script>
+                                        var priority_array=new Array(7);
+                                        var count=0;
+                                        var i1 = 0;
+                                        function clickBtn1() {
+
+                                            if (i1 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_1').classList.remove('select_3_btn_checked');
+                                                
+                                                pushSample1.innerHTML = null;
+                                                i1++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_1').classList.add('select_3_btn_checked');
+                                                priority_array[count%3]=1;
+                                                count++;
+                                                pushSample1.innerHTML = count;
+                                                i1++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
                             </div>
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_2" onclick="clickBtn2()">
+                                <div class="select_3_priority" id="pushSample2"></div>
+                                <p class="select_3_btn_txt"><span id="span2">医療充実度</span>
+                                    <input type="hidden" value="red" id="hidden2" />
 
-                            <div class="question_txt">
-                                <p>あなたのおおよその年収を教えてください</p>
+                                    <script>
+                                        var i2=0;
+                                        function clickBtn2() {
+
+                                            if (i2 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_2').classList.remove('select_3_btn_checked');
+                                                
+                                                pushSample2.innerHTML = null;
+                                                i2++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_2').classList.add('select_3_btn_checked');
+                                                priority_array[count%3]=2;
+                                                count++;
+                                                pushSample2.innerHTML = count;
+                                                i2++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
                             </div>
-                            <div class="question_body">
-                                <div class="question_select js_select_1">
-                                    <div class="example2">
-                                        <input name="income" id="111" type="radio" value=1 /><label
-                                            for="111">400万円未満</label>
-                                        <input name="income" id="112" type="radio" value=1 /><label
-                                            for="112">400万～600万円未満</label>
-                                        <input name="income" id="113" type="radio" value=2 /><label
-                                            for="113">600万~800万円未満</label>
-                                        <input name="income" id="114" type="radio" value=3 /><label
-                                            for="114">800万~1000万円未満</label>
-                                        <input name="income" id="115" type="radio" value=4 /><label
-                                            for="115">1000万円以上</label>
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_3" onclick="clickBtn3()">
+                                <div class="select_3_priority" id="pushSample3"></div>
+                                <p class="select_3_btn_txt"><span id="span3">治安</span>
+                                    <input type="hidden" value="red" id="hidden3" />
 
-                                    </div>
-                                </div>
+                                    <script>
+                                        var i3=0;
+                                        function clickBtn3() {
+                
+
+                                            if (i3 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_3').classList.remove('select_3_btn_checked');
+                                               
+                                                pushSample3.innerHTML = null;
+                                                i3++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_3').classList.add('select_3_btn_checked');
+                                                priority_array[count&3]=3;
+                                                count++;
+                                                pushSample3.innerHTML = count;
+                                                i3++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
+                            </div>
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_4" onclick="clickBtn4()">
+                                <div class="select_3_priority" id="pushSample4"></div>
+                                <p class="select_3_btn_txt"><span id="span4">自然・環境</span>
+                                    <input type="hidden" value="red" id="hidden4" />
+
+                                    <script>
+                                        var i4=0;
+                                        function clickBtn4() {
+
+
+                                            if (i4 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_4').classList.remove('select_3_btn_checked');
+                                                
+                                                pushSample4.innerHTML = null;
+                                                i4++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_4').classList.add('select_3_btn_checked');
+                                                priority_array[count%3]=4;
+                                                count++;
+                                                pushSample4.innerHTML = count;
+                                                i4++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
+                            </div>
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_5" onclick="clickBtn5()">
+                                <div class="select_3_priority" id="pushSample5"></div>
+                                <p class="select_3_btn_txt"><span id="span5">買い物</span>
+                                    <input type="hidden" value="red" id="hidden5" />
+
+                                    <script>
+                                        var i5=0;
+                                        function clickBtn5() {
+
+
+                                            if (i5 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_5').classList.remove('select_3_btn_checked');
+                                                
+                                                pushSample5.innerHTML = null;
+                                                i5++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_5').classList.add('select_3_btn_checked');
+                                                priority_array[count%3]=5;
+                                                count++;
+                                                pushSample5.innerHTML = count;
+                                                i5++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
+                            </div>
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_6" onclick="clickBtn6()">
+                                <div class="select_3_priority" id="pushSample6"></div>
+                                <p class="select_3_btn_txt"><span id="span6">グルメ</span>
+                                    <input type="hidden" value="red" id="hidden6" />
+
+                                    <script>
+                                        var i6=0;
+                                        function clickBtn6() {
+       
+
+                                            if (i6 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_6').classList.remove('select_3_btn_checked');
+                                                
+                                                pushSample6.innerHTML = null;
+                                                i6++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_6').classList.add('select_3_btn_checked');
+                                                priority_array[count%3]=6;
+                                                count++;
+                                                pushSample6.innerHTML = count;
+                                                i6++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
+                            </div>
+                            <div class="select_3_btn" id="btn_priority_of_accessibility_7" onclick="clickBtn7()">
+                                <div class="select_3_priority" id="pushSample7"></div>
+                                <p class="select_3_btn_txt"><span id="span7">アクセス</span>
+                                    <input type="hidden" value="red" id="hidden7" />
+
+                                    <script>
+                                        var i7=0;
+                                        function clickBtn7() {
+
+
+                                            if (i7 % 2 != 0) {
+                                                document.querySelector('#btn_priority_of_accessibility_7').classList.remove('select_3_btn_checked');
+                                                
+                                                pushSample7.innerHTML = null;
+                                                i7++;
+                                            } else {
+                                                document.querySelector('#btn_priority_of_accessibility_7').classList.add('select_3_btn_checked');
+                                                priority_array[count%3]=7;
+                                                count++;
+                                                pushSample7.innerHTML = count;
+                                                i7++;
+                                                check()
+                                            }
+                                        }
+
+                                    </script>
+                                </p>
                             </div>
                         </div>
-                    </div>
+                        <input type="hidden" name="prio_1" id="priority_1" value=0>
+                        <input type="hidden" name="prio_2" id="priority_2" value=0>
+                        <input type="hidden" name="prio_3" id="priority_3" value=0>
+                        
                 </li>
+
             </ul>
-            <input class="decorated-btn click-down" type="submit" value="判定" style="font-size:40px" />
+            <input class="decorated-btn click-down" type="submit" value="判定" style="font-size:40px">
         </div>
+        <script type="text/javascript">
+            function check(){
+                document.getElementById("priority_1").value=priority_array[0];
+                document.getElementById("priority_2").value=priority_array[1];
+                document.getElementById("priority_3").value=priority_array[2];
+            }
+        </script>
     </form>
 </body>
 

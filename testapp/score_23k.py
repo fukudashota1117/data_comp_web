@@ -20,9 +20,9 @@ def score(towntype,question,priority,income):
     whi_pri=priority
 
     pri=np.array([1,1,1,1,1,1,1])
-    pri[whi_pri[0]-1]=1.5
-    pri[whi_pri[1]-1]=1.3
-    pri[whi_pri[2]-1]=1.1
+    pri[whi_pri[0]-1]=2
+    pri[whi_pri[1]-1]=1.75
+    pri[whi_pri[2]-1]=1.5
     eff=1+(a-b)*w*pri#計算式
     abs=np.abs(a-b).mean()
 
