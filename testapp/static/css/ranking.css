@@ -1,0 +1,17 @@
+.ranking_header{
+    font-size:45px;
+    font-weight: 100;
+    max-width: 1000px;
+    padding: 0.1em;/*文字周りの余白*/
+    color: #010101;/*文字色*/
+    border-bottom: solid 3px #516ab6;/*下線*/
+    margin-bottom: 20px;
+}
+.ranking_crown{
+    margin:10px 10px;
+}
+.context{
+    font-size: 20px;
+    margin:10px 10px;
+    max-width: 1000px;
+}

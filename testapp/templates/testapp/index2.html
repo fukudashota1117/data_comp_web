@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ranking.css') }}" />
 <li type="1" id="first_k">{{first_k}}</li>
 <li type="1" id="second_k">{{second_k}}</li>
 <li type="1" id="third_k">{{third_k}}</li>
