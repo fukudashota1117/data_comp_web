@@ -2,9 +2,9 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/ranking.css') }}" />
-<li type="1" id="first_k">{{first_k}}</li>
-<li type="1" id="second_k">{{second_k}}</li>
-<li type="1" id="third_k">{{third_k}}</li>
-<li>{{priority}}</li>
+<div hidden="" id="first_k">{{first_k}}</div>
+<div hidden="" id="second_k">{{second_k}}</div>
+<div hidden=""id="third_k">{{third_k}}</div>
+<div hidden="">{{priority}}</div>
 <script src="{{ url_for('static', filename='javascript/sep_23k.js') }}"></script>
 {% endblock %}
